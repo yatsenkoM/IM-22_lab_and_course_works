@@ -1,0 +1,11 @@
+.github
+.vs
+docs
+guidelines
+node_modules
+test
+publish.sh
+package.json
+package-lock.json
+README.md
+.eslintrc.json

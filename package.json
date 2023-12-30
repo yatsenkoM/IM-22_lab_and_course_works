@@ -1,7 +1,7 @@
 {
   "name": "edu_db_labs",
   "version": "2.1.0",
-  "main": "index.js",
+  "main": "src/js/server.js",
   "description": "Databases labs template",
   "repository": "https://github.com/boldak/dis-edu",
   "author": "Andrey Boldak <boldak.andrey@gmail.com>",
@@ -9,12 +9,28 @@
   "scripts": {
     "docs:dev": "npx vuepress dev docs",
     "docs:build": "npx vuepress build docs",
-    "publish": "publish.sh"
+    "publish": "publish.sh",
+    "dev": "nodemon server.js",
+    "test": "npm run lint",
+    "lint": "eslint . && prettier -c \"**/*.js\" \"**/*.json\" \"**/*.md\"",
+    "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
   },
   "dependencies": {
     "@vuepress/plugin-back-to-top": "^1.7.1",
     "@vuepress/plugin-pwa": "^1.7.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5",
     "vuepress": "^1.7.1",
     "vuepress-theme-cool": "^1.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "eslint-config-metarhia": "^8.2.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.0.3"
   }
 }
