@@ -21,8 +21,8 @@ git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 
-git push -f https://github.com/yatsenkoM/db-coursework master:gh-pages
+git push -f https://github.com/yatsenkoM/IM-22_lab_and_course_works master:gh-pages
 # if you use ssh use this instead:
-# git push -f git@github.com:yatsenkoM/db-coursework.git master:gh-pages
+# git push -f git@github.com:yatsenkoM/IM-22_lab_and_course_works.git master:gh-pages
 
 cd -
