@@ -30,7 +30,7 @@ class File {
       hasVisualization,
       authorId,
     ]);
-    return file;
+    return this.getFileById(file.insertId);
   }
 
   static async getAll() {
@@ -41,8 +41,8 @@ class File {
 
   static async getFileById(id) {
     const sql = `
-    SELECT * FROM file 
-    WHERE id = ?;
+        SELECT * FROM file
+        WHERE id = ?;
     `;
     const [file] = await db.execute(sql, [id]);
     return file;
@@ -51,8 +51,8 @@ class File {
   static async deleteFileById(id) {
     const file = this.getFileById(id);
     const sql = `
-    DELETE FROM file 
-    WHERE id = ?;
+        DELETE FROM file
+        WHERE id = ?;
     `;
     await db.execute(sql, [id]);
     return file;
@@ -61,19 +61,13 @@ class File {
   static async updateFileInfo(requestBody, id) {
     const { newName, description } = requestBody;
     const lastEditTime = getDatetime();
-    console.log(lastEditTime);
     const sql = `
     UPDATE file
     SET name = ?, description = ?, lastEditTime = ?
     WHERE id = ?;
     `;
-    const [file] = await db.execute(sql, [
-      newName,
-      description,
-      lastEditTime,
-      id,
-    ]);
-    return file;
+    await db.execute(sql, [newName, description, lastEditTime, id]);
+    return this.getFileById(id);
   }
 }
 
