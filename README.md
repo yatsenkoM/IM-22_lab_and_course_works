@@ -3,7 +3,7 @@
 
 ## Як використовувати
 
-Посилання на документацію: https://strivingtoadoniss.github.io/IM-22_lab_and_course_works/
+Посилання на документацію: https://yatsenkom.github.io/IM-22_lab_and_course_works/
 
 В цьому репозиторії знаходиться шаблон для виконання лабораторних робіт.
 
